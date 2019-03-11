@@ -16,5 +16,9 @@ public class TopicService {
 	public List<Topic> getTopics(){
 		return TOPICS;
 	}
+	
+	public void addTopic(Topic t) {
+		TOPICS.add(t);
+	}
 
 }
