@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service @Primary
+@Service
 public class TopicServiceImpl implements TopicServiceInterface{
 
 	private static List<Topic> TOPICS = new ArrayList<Topic>(Arrays.asList(new Topic("java", "Java", "Java Description"),
