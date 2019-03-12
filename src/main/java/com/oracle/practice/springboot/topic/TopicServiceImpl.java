@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service
-public class TopicService {
+@Service @Primary
+public class TopicServiceImpl implements TopicServiceInterface{
 
 	private static List<Topic> TOPICS = new ArrayList<Topic>(Arrays.asList(new Topic("java", "Java", "Java Description"),
 			new Topic("javascript", "JavaScript", "JavaScript Description"),

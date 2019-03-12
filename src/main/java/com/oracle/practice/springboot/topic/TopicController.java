@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TopicController {
 	
 	@Autowired
-	TopicService topicService;
+	TopicServiceInterface topicService;
 	
 	@RequestMapping(method=RequestMethod.GET, path="/topics")
 	public List<Topic> getAllTopics() {
+		System.out.println(topicService.getClass().getName());
 		return topicService.getTopics();
 	}
 
