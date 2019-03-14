@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class H2TopicServiceImpl implements TopicServiceInterface {
 	
 	@Autowired
-	private TopicRepository topicRepository;
+	private H2TopicRepository topicRepository;
 	
 	public List<Topic> getTopics(){
 		List<Topic> topics = new ArrayList<Topic>();
