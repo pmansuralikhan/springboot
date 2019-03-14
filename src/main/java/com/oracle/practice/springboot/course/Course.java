@@ -1,16 +1,28 @@
-package com.oracle.practice.springboot.topic;
+package com.oracle.practice.springboot.course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.oracle.practice.springboot.topic.Topic;
 
 @Entity
-public class Topic {
+public class Course {
 	
 	@Id
 	private String id;
 	private String name;
 	private String description;
 	
+	@ManyToOne
+	private Topic topic;
+	
+	public Topic getTopic() {
+		return topic;
+	}
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
 	public String getId() {
 		return id;
 	}
@@ -30,13 +42,13 @@ public class Topic {
 		this.description = description;
 	}
 	
-	public Topic(String id, String name, String description) {
+	public Course(String id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
 	
-	public Topic() {		
+	public Course() {		
 	}
 }
