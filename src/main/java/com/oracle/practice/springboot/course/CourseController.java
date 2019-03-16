@@ -15,20 +15,20 @@ public class CourseController {
 	@Autowired
 	H2CourseService courseService;
 	
-	@RequestMapping(method=RequestMethod.GET, path="/topics/{id}/courses")
-	public List<Course> getAllCourses() {
+	@RequestMapping(method=RequestMethod.GET, path="/topics/{topicId}/courses")
+	public List<Course> getAllCourses(@PathVariable String topicId) {
 		System.out.println(courseService.getClass().getName());
-		return courseService.getCourses();
+		return courseService.getCourses(topicId);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, path="/topics/{id}/courses/{courseId}")
-	public Course getCourse(@PathVariable String id, @PathVariable String courseId) {
-		return courseService.getCourse(id);
+	@RequestMapping(method=RequestMethod.GET, path="/topics/{topicId}/courses/{courseId}")
+	public Course getCourse(@PathVariable String topicId, @PathVariable String courseId) {
+		return courseService.getCourse(topicId, courseId);
 	}
 
-	@RequestMapping(method=RequestMethod.POST, value="/topics/{id}/courses")
-	public void addCourse(@RequestBody Course course) {
-		courseService.addCourse(course);
+	@RequestMapping(method=RequestMethod.POST, value="/topics/{topicId}/courses")
+	public void addCourse(@RequestBody Course course, @PathVariable String topicId) {
+		courseService.addCourse(course, topicId);
 	}
 	
 }
